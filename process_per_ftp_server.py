@@ -31,6 +31,8 @@ class Serial(object):
             self.client, _ = self.control_socket.accept()
 
             if os.fork():
+                pass
+            else:
                 self.fd = self.client.makefile('rw', 0)
     
                 self.respond("220 OHAI")
